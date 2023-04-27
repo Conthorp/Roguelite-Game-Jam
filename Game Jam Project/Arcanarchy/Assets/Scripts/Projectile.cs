@@ -6,10 +6,11 @@ public class Projectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,4 +18,18 @@ public class Projectile : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case "Wall":
+                Destroy(gameObject);
+                break;
+            case "Enemy":
+                Destroy(gameObject);
+                break;
+        }
+    }
+
 }
