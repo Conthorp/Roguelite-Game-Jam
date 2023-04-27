@@ -15,9 +15,7 @@ public class XPBar : MonoBehaviour
 
     public int XPToLevel = 100;
     public int currentXP = 0;
-    public int currentLevel = 1;
-
-    public int multiplier = 2;
+    public static int currentLevel = 1;
 
     public void XPGain(int XPAmount)
     {
@@ -25,11 +23,8 @@ public class XPBar : MonoBehaviour
         
         if (currentXP >=XPToLevel)
         {
-
-            currentLevel ++;
             currentXP = currentXP -= XPToLevel;
-            XPToLevel = XPToLevel * multiplier;
-
+            currentLevel ++;
         }
     }
 
@@ -38,8 +33,7 @@ public class XPBar : MonoBehaviour
 
         slider.value = currentXP;
 
-        //string maxHealthString = maxHealth.toString();
-        //string currentHealthString = currentHealth.toString();
+        XPToLevel = currentLevel * 100;
 
         XPToLevelText.SetText(XPToLevel.ToString());
         currentXPText.SetText(currentXP.ToString());
