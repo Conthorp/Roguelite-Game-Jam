@@ -23,7 +23,14 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotateTowardsTarget();
+        if (!target)
+        {
+            GetTarget();
+        }
+        else
+        {
+            RotateTowardsTarget();
+        }
     }
 
     void FixedUpdate()
@@ -63,6 +70,7 @@ public class EnemyAI : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Player":
+                player = collision.gameObject.GetComponent<PlayerController>();
                 player.hp = player.hp - damage;
                 if (player.hp <= 0)
                 {
