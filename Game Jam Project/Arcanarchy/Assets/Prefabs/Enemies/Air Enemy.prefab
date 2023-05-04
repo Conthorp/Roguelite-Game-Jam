@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   target: {fileID: 0}
-  maxhp: 1
+  maxhp: 4
   damage: 1
   speed: 4
   rotateSpeed: 1

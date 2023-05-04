@@ -186,6 +186,6 @@ MonoBehaviour:
   player: {fileID: 0}
   target: {fileID: 0}
   maxhp: 4
-  damage: 1
+  damage: 4
   speed: 1
   rotateSpeed: 1
