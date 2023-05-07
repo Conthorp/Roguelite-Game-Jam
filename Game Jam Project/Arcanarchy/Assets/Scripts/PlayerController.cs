@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePosition;
     private Vector2 aimDirection;
 
+    public HealthBar myHealthBar;
+
     public Camera sceneCamera;
     public GameObject bullet;
     

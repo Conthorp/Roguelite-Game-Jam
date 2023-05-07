@@ -14,15 +14,15 @@ public class HealthBar : MonoBehaviour
     public TextMeshProUGUI maxHealthText;
     public TextMeshProUGUI currentHealthText;
 
-    public int maxHealth = 10;
-    public int currentHealth = 10; 
+    public float maxHealth = 10;
+    public float currentHealth = 10; 
 
     public void increaseMaxHealth()
     {
         maxHealth += 2;
     }
 
-    public void playerDamaged(int damage)
+    public void playerDamaged(float damage)
     {
         currentHealth -= damage;
     }

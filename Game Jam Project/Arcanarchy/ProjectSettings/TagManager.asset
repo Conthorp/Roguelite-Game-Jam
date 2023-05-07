@@ -9,6 +9,8 @@ TagManager:
   - Spell
   - Enemy
   - Wall
+  - XP Bar
+  - HP Bar
   layers:
   - Default
   - TransparentFX

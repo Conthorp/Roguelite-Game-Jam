@@ -6,6 +6,9 @@ public class EnemyAI : MonoBehaviour
 {
     public PlayerController player;
     public Transform target;
+    public XPBar myXP;
+    public HealthBar myHealthBar;
+
     public float maxhp = 3;
     private float hp;
     public float damage = 3;
@@ -31,6 +34,7 @@ public class EnemyAI : MonoBehaviour
         {
             RotateTowardsTarget();
         }
+
     }
 
     void FixedUpdate()
@@ -86,12 +90,14 @@ public class EnemyAI : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(this.gameObject);
+            myXP.XPGain(100);
         }
     }
 
     void DealDamage(float playerHealth, float damageDealt)
     {
         playerHealth = playerHealth - damageDealt;
+        myHealthBar.playerDamaged(damageDealt);
         if (playerHealth <= 0)
         {
             player.Death();
